@@ -1,4 +1,4 @@
-module github.com/thecodechef/stylus
+module github.com/thecodechef/stylax
 
 go 1.15
 

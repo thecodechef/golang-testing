@@ -12,6 +12,6 @@ var versionCmd = &cobra.Command{
 	Short: "Prints the version",
 	Long:  "Prints the version",
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Printf("%v: %v\n", color.MagentaString("Stylus Version"), color.GreenString(VERSION))
+		fmt.Printf("%v: %v\n", color.MagentaString("Stylax Version"), color.GreenString(VERSION))
 	},
 }

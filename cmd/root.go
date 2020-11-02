@@ -15,9 +15,9 @@ var cfgFile string
 var userLicense string
 
 var rootCmd = &cobra.Command{
-	Use:   "stylus",
-	Short: "Compile `stylus` to `css`",
-	Long:  "Compile `stylus` to `css`",
+	Use:   "stylax",
+	Short: "Compile `stylax` to `css`",
+	Long:  "Compile `stylax` to `css`",
 	Run: func(cmd *cobra.Command, args []string) {
 		fmt.Println("Hello, World!")
 	},
@@ -32,7 +32,7 @@ func Execute() {
 
 func init() {
 	cobra.OnInitialize(initConfig)
-	rootCmd.PersistentFlags().StringVar(&cfgFile, "config", "", "config file (default is $HOME/.stylusrc)")
+	rootCmd.PersistentFlags().StringVar(&cfgFile, "config", "", "config file (default is $HOME/.stylax.config.yaml)")
 	rootCmd.PersistentFlags().StringP("author", "a", "YOUR NAME", "author name for copyright attribution")
 	rootCmd.PersistentFlags().StringVarP(&userLicense, "license", "l", "", "name of license for the project")
 	viper.BindPFlag("author", rootCmd.PersistentFlags().Lookup("author"))
@@ -52,9 +52,9 @@ func initConfig() {
 		}
 
 		// Set Name & Type of Config File
-		viper.SetConfigName(".stylusrc")
-		viper.SetConfigType("toml")
-		// Search config in home directory with name `.stylus` (without extension).
+		viper.SetConfigName(".stylax.config")
+		viper.SetConfigType("yaml")
+		// Search config in home directory with name `.stylax.config` (without extension).
 		viper.AddConfigPath(home)
 		viper.AddConfigPath(".")
 	}

@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/thecodechef/stylus/cmd"
+	"github.com/thecodechef/stylax/cmd"
 )
 
 func main() {
