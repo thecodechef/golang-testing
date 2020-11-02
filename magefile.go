@@ -26,7 +26,7 @@ func Build() error {
 func Install() error {
 	mg.Deps(Build)
 	fmt.Println("Installing...")
-	return os.Rename("./bin/stylus", "/usr/bin/stylax")
+	return os.Rename("./bin/stylax", "/usr/bin/stylax")
 }
 
 // Manage your deps, or running package managers.
