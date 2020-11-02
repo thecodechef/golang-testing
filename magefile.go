@@ -18,7 +18,7 @@ import (
 func Build() error {
 	mg.Deps(InstallDeps)
 	fmt.Println("Building...")
-	cmd := exec.Command("go", "build", "-o", "./bin/stylus", ".")
+	cmd := exec.Command("go", "build", "-o", "./bin/stylax", ".")
 	return cmd.Run()
 }
 
@@ -26,7 +26,7 @@ func Build() error {
 func Install() error {
 	mg.Deps(Build)
 	fmt.Println("Installing...")
-	return os.Rename("./bin/stylus", "/usr/bin/stylus")
+	return os.Rename("./bin/stylus", "/usr/bin/stylax")
 }
 
 // Manage your deps, or running package managers.
@@ -39,5 +39,5 @@ func InstallDeps() error {
 // Clean up after yourself
 func Clean() {
 	fmt.Println("Cleaning...")
-	os.RemoveAll("./bin/stylus")
+	os.RemoveAll("./bin/stylax")
 }
